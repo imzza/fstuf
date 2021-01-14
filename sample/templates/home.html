@@ -1,0 +1,154 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block content %}
+
+    <div class="row">
+
+        {% for file in files %}
+            <div class="col-md-4">
+                <h2>{{ file.description }}</h2>
+                <br>
+                {{ file.file }}
+            </div>
+        {% endfor %}
+
+
+    </div>
+
+    <div id="myModal" class="modal fade" role="dialog" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-lg">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title"><i class="fa fa-upload"
+                                               aria-hidden="true"></i> {% trans 'Carga de archivos al sistema' %}</h4>
+                </div>
+                <div class="modal-body">
+                    {{ form.as_p }}
+                    <div id="uploader" class="hidden">
+                        <p class="text-danger text-center">
+                            {% trans 'Su navegador no tiene soporte para Flash, Silverlight o HTML5.' %}
+                        </p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <script type="text/javascript">
+
+        var uploader = false;
+
+        function generate_upload_widget(id_filetype) {
+            // Hakai to widget if exists
+            if (uploader.plupload) uploader.plupload('destroy');
+
+            // Object for uploader widget
+            uploader = $('#uploader');
+
+            // Show and genereate when filetype selected
+            if (id_filetype !== '') {
+
+                // Obtain filters
+                $.post("{% url 'ajax_common_get_file_filters' %}",
+                    {
+                        file_type: id_filetype,
+                        csrfmiddlewaretoken: '{{ csrf_token }}'
+                    })
+                    .done(function (data) {
+                        // Generate filters
+                        var mime_types_filters = [];
+                        for (var I in data) mime_types_filters.push(
+                            {
+                                title: data[I].fields.name,
+                                extensions: (data[I].fields.file_extension).join()
+                            });
+
+                        // Generate and show widget
+                        uploader.removeClass('hidden');
+
+
+                        uploader.plupload({
+                            // Runtime settings
+                            runtimes: 'html5,flash,silverlight,html4',
+                            flash_swf_url: '{% static 'plupload-2.3.6/Moxie.swf' %}',
+                            silverlight_xap_url: '{% static 'plupload-2.3.6/Moxie.xap' %}',
+                            url: "{% url 'ajax_create_file' %}",
+
+                            // General settings
+                            multi_selection: false,
+                            max_file_count: data[0].fields.num_files,
+                            rename: false,
+                            sortable: true,
+                            dragdrop: true,
+
+                            // Specify what files to browse for
+                            filters: {
+                                mime_types: mime_types_filters,
+                                max_file_size: (data[0].fields.max_size) + 'kb',
+                                prevent_duplicates: true
+                            },
+
+                            {#                            // Resize for image#}
+                            {#                            resize : {#}
+                            {#                                width: 1024,#}
+                            {#                                height: 768,#}
+                            {#                                quality: 90#}
+                            {#                            },#}
+
+                            // Views to activate
+                            views: {
+                                list: false,
+                                thumbs: true,
+                                active: 'list'
+                            },
+
+                            // Multipart data params
+                            multipart: true,
+
+                            // Post init events, bound after the internal events
+                            init: {
+
+                                BeforeUpload: function (up, file) {
+                                    up.settings.multipart_params = {
+                                        description: $('#id_description').val(),
+                                        file_type: id_filetype,
+                                        csrfmiddlewaretoken: '{{ csrf_token }}'
+
+                                    };
+                                },
+
+                                FileUploaded: function (up, file, response) {
+                                    // Called when file has finished uploading
+                                    console.log('response: ', response);
+                                },
+                                UploadComplete: function (up, files) {
+                                    // Called when all files are either uploaded or failed
+                                    // window.location.reload();
+                                }
+                            }
+                        });
+
+                    });
+            }
+            else {
+                uploader.addClass('hidden');
+                uploader = false;
+            }
+        }
+
+    </script>
+
+{% endblock %}
+
+<!-- Modal -->

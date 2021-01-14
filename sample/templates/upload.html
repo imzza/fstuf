@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static %}
+
+{% block content %}
+
+<div id="container">
+    <span id="pickfiles">[Upload files]</span>
+</div>
+<div id="filelist">Your browser doesn't have Flash, Silverlight or HTML5 support.</div>
+
+<script type="text/javascript">
+    window.addEventListener("load", function () {
+        var path = "js/`";
+        var uploader = new plupload.Uploader({
+            browse_button: 'pickfiles',
+            container: document.getElementById('container'),
+            url: '/upload/',
+            chunk_size: '5000kb',
+            max_retries: 2,
+            filters: {
+                max_file_size: '30000mb',
+                mime_types: [{ title: "Video", extensions: "mp4,3gp,mov,zip,csv" }]
+            },
+            init: {
+                PostInit: function () {
+                    document.getElementById('filelist').innerHTML = '';
+                },
+                FilesAdded: function (up, files) {
+                    plupload.each(files, function (file) {
+                        document.getElementById('filelist').innerHTML += '<div id="' + file.id + '">' + file.name + ' (' + plupload.formatSize(file.size) + ') <b></b></div>';
+                    });
+                    uploader.start();
+                },
+                UploadProgress: function (up, file) {
+                    document.getElementById(file.id).getElementsByTagName('b')[0].innerHTML = '<span>' + file.percent + "%</span>";
+                },
+                Error: function (up, err) {
+                    // DO YOUR ERROR HANDLING!
+                    console.log(err);
+                }
+            }
+        });
+        uploader.init();
+    });
+</script>
+
+{% endblock %}
+
+<!-- Modal -->

@@ -1,0 +1,332 @@
+[
+{
+  "model": "sample.fileextension",
+  "pk": 1,
+  "fields": {
+    "extension": "aac",
+    "description": "AAC audio file",
+    "mime_type": "audio",
+    "mime_subtype": "aac"
+  }
+},
+{
+  "model": "sample.fileextension",
+  "pk": 2,
+  "fields": {
+    "extension": "avi",
+    "description": "Audio Video Interleave",
+    "mime_type": "video",
+    "mime_subtype": "x-msvideo"
+  }
+},
+{
+  "model": "sample.fileextension",
+  "pk": 3,
+  "fields": {
+    "extension": "css",
+    "description": "Cascading Style Sheets",
+    "mime_type": "text",
+    "mime_subtype": "css"
+  }
+},
+{
+  "model": "sample.fileextension",
+  "pk": 4,
+  "fields": {
+    "extension": "doc",
+    "description": "Microsoft Word",
+    "mime_type": "application",
+    "mime_subtype": "msword"
+  }
+},
+{
+  "model": "sample.fileextension",
+  "pk": 5,
+  "fields": {
+    "extension": "docx",
+    "description": "Office Open XML Wordprocessing",
+    "mime_type": "application",
+    "mime_subtype": "vnd.openxmlformats-officedocument.wordprocessingml.document"
+  }
+},
+{
+  "model": "sample.fileextension",
+  "pk": 6,
+  "fields": {
+    "extension": "exe",
+    "description": "Executable file",
+    "mime_type": "application",
+    "mime_subtype": "octet-stream"
+  }
+},
+{
+  "model": "sample.fileextension",
+  "pk": 7,
+  "fields": {
+    "extension": "gif",
+    "description": "Graphics Interchange Format",
+    "mime_type": "image",
+    "mime_subtype": "gif"
+  }
+},
+{
+  "model": "sample.fileextension",
+  "pk": 8,
+  "fields": {
+    "extension": "htm",
+    "description": "HyperText Markup Language",
+    "mime_type": "text",
+    "mime_subtype": "html"
+  }
+},
+{
+  "model": "sample.fileextension",
+  "pk": 9,
+  "fields": {
+    "extension": "html",
+    "description": "HyperText Markup Language",
+    "mime_type": "text",
+    "mime_subtype": "html"
+  }
+},
+{
+  "model": "sample.fileextension",
+  "pk": 10,
+  "fields": {
+    "extension": "jpeg",
+    "description": "JPEG images",
+    "mime_type": "image",
+    "mime_subtype": "jpeg"
+  }
+},
+{
+  "model": "sample.fileextension",
+  "pk": 11,
+  "fields": {
+    "extension": "jpg",
+    "description": "JPEG images",
+    "mime_type": "image",
+    "mime_subtype": "jpeg"
+  }
+},
+{
+  "model": "sample.fileextension",
+  "pk": 12,
+  "fields": {
+    "extension": "js",
+    "description": "JavaScript (ECMAScript)",
+    "mime_type": "application",
+    "mime_subtype": "javascript"
+  }
+},
+{
+  "model": "sample.fileextension",
+  "pk": 13,
+  "fields": {
+    "extension": "json",
+    "description": "JSON format",
+    "mime_type": "application",
+    "mime_subtype": "json"
+  }
+},
+{
+  "model": "sample.fileextension",
+  "pk": 14,
+  "fields": {
+    "extension": "mp3",
+    "description": "MPEG-1 Audio Layer III",
+    "mime_type": "audio",
+    "mime_subtype": "mpeg"
+  }
+},
+{
+  "model": "sample.fileextension",
+  "pk": 15,
+  "fields": {
+    "extension": "mpg",
+    "description": "Moving Picture Experts Group",
+    "mime_type": "video",
+    "mime_subtype": "mpeg"
+  }
+},
+{
+  "model": "sample.fileextension",
+  "pk": 16,
+  "fields": {
+    "extension": "pdf",
+    "description": "Portable Document Format",
+    "mime_type": "application",
+    "mime_subtype": "pdf"
+  }
+},
+{
+  "model": "sample.fileextension",
+  "pk": 17,
+  "fields": {
+    "extension": "png",
+    "description": "Portable Network Graphics",
+    "mime_type": "image",
+    "mime_subtype": "png"
+  }
+},
+{
+  "model": "sample.fileextension",
+  "pk": 18,
+  "fields": {
+    "extension": "ppsx",
+    "description": "Office Open XML Presentation",
+    "mime_type": "application",
+    "mime_subtype": "vnd.openxmlformats-officedocument.presentationml.slideshow"
+  }
+},
+{
+  "model": "sample.fileextension",
+  "pk": 19,
+  "fields": {
+    "extension": "ppt",
+    "description": "",
+    "mime_type": "application",
+    "mime_subtype": "vnd.ms-powerpoint"
+  }
+},
+{
+  "model": "sample.fileextension",
+  "pk": 20,
+  "fields": {
+    "extension": "pptx",
+    "description": "Office Open XML Presentation",
+    "mime_type": "application",
+    "mime_subtype": "vnd.openxmlformats-officedocument.presentationml.presentation"
+  }
+},
+{
+  "model": "sample.fileextension",
+  "pk": 21,
+  "fields": {
+    "extension": "rar",
+    "description": "Roshal ARchive",
+    "mime_type": "application",
+    "mime_subtype": "x-rar-compressed"
+  }
+},
+{
+  "model": "sample.fileextension",
+  "pk": 22,
+  "fields": {
+    "extension": "swf",
+    "description": "Shockwave Flash",
+    "mime_type": "application",
+    "mime_subtype": "x-shockwave-flash"
+  }
+},
+{
+  "model": "sample.fileextension",
+  "pk": 23,
+  "fields": {
+    "extension": "tiff",
+    "description": "Tagged Image File Format",
+    "mime_type": "image",
+    "mime_subtype": "tiff"
+  }
+},
+{
+  "model": "sample.fileextension",
+  "pk": 24,
+  "fields": {
+    "extension": "txt",
+    "description": "Archivo de texto simple, texto sencillo o texto sin formato",
+    "mime_type": "text",
+    "mime_subtype": "plain"
+  }
+},
+{
+  "model": "sample.fileextension",
+  "pk": 25,
+  "fields": {
+    "extension": "wav",
+    "description": "WAVE form audio file format",
+    "mime_type": "audio",
+    "mime_subtype": "wav"
+  }
+},
+{
+  "model": "sample.fileextension",
+  "pk": 26,
+  "fields": {
+    "extension": "xls",
+    "description": "",
+    "mime_type": "application",
+    "mime_subtype": "vnd.ms-excel"
+  }
+},
+{
+  "model": "sample.fileextension",
+  "pk": 27,
+  "fields": {
+    "extension": "xlsx",
+    "description": "Office Open XML Spreadsheet",
+    "mime_type": "application",
+    "mime_subtype": "vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+  }
+},
+{
+  "model": "sample.fileextension",
+  "pk": 28,
+  "fields": {
+    "extension": "xml",
+    "description": "eXtensible Markup Language",
+    "mime_type": "application",
+    "mime_subtype": "xml"
+  }
+},
+{
+  "model": "sample.fileextension",
+  "pk": 29,
+  "fields": {
+    "extension": "zip",
+    "description": "",
+    "mime_type": "application",
+    "mime_subtype": "zip"
+  }
+},
+{
+  "model": "sample.fileextension",
+  "pk": 30,
+  "fields": {
+    "extension": "mpeg",
+    "description": "Moving Picture Experts Group",
+    "mime_type": "video",
+    "mime_subtype": "mpeg"
+  }
+},
+{
+  "model": "sample.fileextension",
+  "pk": 31,
+  "fields": {
+    "extension": "mkv",
+    "description": "Matroska video",
+    "mime_type": "video",
+    "mime_subtype": "x-matroska"
+  }
+},
+{
+  "model": "sample.fileextension",
+  "pk": 32,
+  "fields": {
+    "extension": "wmv",
+    "description": "Windows Media Video",
+    "mime_type": "video",
+    "mime_subtype": "x-ms-wmv"
+  }
+},
+{
+  "model": "sample.fileextension",
+  "pk": 33,
+  "fields": {
+    "extension": "wma",
+    "description": "Windows Media Audio",
+    "mime_type": "audio",
+    "mime_subtype": "x-ms-wma"
+  }
+}
+]
